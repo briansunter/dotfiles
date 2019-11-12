@@ -1,0 +1,14 @@
+aswitalski/oh-my-zsh-sensei-git-plugin
+junegunn/fzf
+caarlos0/zsh-mkc
+caarlos0/zsh-open-github-pr
+djui/alias-tips
+mafredri/zsh-async
+sindresorhus/pure
+pbar1/zsh-terraform
+webyneter/docker-aliases
+wting/autojump
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting

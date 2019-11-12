@@ -1,0 +1,4 @@
+[submodule "emacs/.emacs.d"]
+	path = emacs/.emacs.d
+	url = git@github.com:syl20bnr/spacemacs.git
+	branch = develop
