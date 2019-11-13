@@ -1,21 +1,10 @@
 #!/usr/bin/env bash
-
 symlinks=(
   emacs
   vim
   git
   zsh
 )
-
-setup_home() {
-  echo "Setting up home"
-  /usr/local/bin/stow ${symlinks[@]}
-}
-
-setup_macos() {
-  echo "Setting up macos"
-  ./macos/bootstrap.sh
-}
 
 install_brew() {
   if ! [ -x "$(command -v brew)" ]; then
@@ -25,11 +14,15 @@ install_brew() {
 }
 
 bootstrap() {
-  pushd ~/.dotfiles
+  pushd ${DOTFILES_HOME:-~/.dotfiles}
   install_brew
   brew bundle
-  setup_home
-  setup_macos
+
+  echo "Setting up home"
+  stow ${symlinks[@]}
+
+  echo "Setting up macos"
+  ./macos/bootstrap.sh
   popd
 }
 
