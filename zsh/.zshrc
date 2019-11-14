@@ -26,6 +26,10 @@ antibody bundle < ~/.dotfiles/zsh/lib/zsh_plugins.txt
 # completions
 autoload -U compinit && compinit
 
+# NVM
+export NVM_DIR=~/.nvm
+source "$(brew --prefix nvm)/nvm.sh"
+
 # FZF
 if test -d /usr/local/opt/fzf/shell; then
   . /usr/local/opt/fzf/shell/key-bindings.zsh
