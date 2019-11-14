@@ -23,6 +23,9 @@ SAVEHIST=$HISTSIZE
 source <(antibody init)
 antibody bundle < ~/.dotfiles/zsh/lib/zsh_plugins.txt
 
+# completions
+autoload -U compinit && compinit
+
 # FZF
 if test -d /usr/local/opt/fzf/shell; then
   . /usr/local/opt/fzf/shell/key-bindings.zsh
