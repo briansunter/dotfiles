@@ -64,6 +64,8 @@ cask "java"
 cask "qlcolorcode"
 cask "qlmarkdown"
 cask "qlstephen"
+cask "private-internet-access"
+
 cask "quicklook-json" 
 cask "slack"
 cask "spectacle"
