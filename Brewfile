@@ -51,6 +51,7 @@ cask "grandperspective"
 cask "iterm2"
 cask "java"
 cask "keybase"
+cask 'omnifocus'
 cask "postman"
 cask "private-internet-access"
 cask "qlcolorcode"
@@ -63,3 +64,5 @@ cask "steam"
 cask "the-unarchiver"
 cask "tor-browser"
 cask "yacreader"
+
+mas "iA Writer", id: 775737590

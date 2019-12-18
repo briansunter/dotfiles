@@ -735,7 +735,13 @@
       },
       "quicklook-json": {
         "version": "latest"
+      },
+      "omnifocus": {
+        "version": "3.4.4"
       }
+    },
+    "mas": {
+      "iA Writer": null
     }
   },
   "system": {
