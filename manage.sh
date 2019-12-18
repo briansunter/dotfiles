@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -euxo pipefail 
+
 symlinks=(
   emacs
   vim
@@ -7,6 +9,7 @@ symlinks=(
 )
 
 install_brew() {
+export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
   if ! [ -x "$(command -v brew)" ]; then
     echo "Installing Homebrew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -16,6 +19,7 @@ install_brew() {
 bootstrap() {
   pushd ${DOTFILES_HOME:-~/.dotfiles}
   install_brew
+  brew update
   brew bundle
 
   echo "Setting up home"
