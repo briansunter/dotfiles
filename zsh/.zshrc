@@ -11,9 +11,6 @@ alias ec='emacsclient -c'
 alias simple-serve='python -m SimpleHTTPServer 8000'
 alias dot="$HOME/.dotfiles/manage.sh bootstrap"
 
-# functions
- . ~/.dotfiles/zsh/lib/functions.sh
-
 # history
 HISTFILE=~/.zsh_history
 HISTSIZE=999999999
@@ -45,3 +42,6 @@ if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
 fi
 source "$fasd_cache"
 unset fasd_cache
+
+# functions
+. ~/.dotfiles/zsh/lib/functions.sh
