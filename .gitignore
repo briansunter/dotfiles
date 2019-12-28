@@ -1,3 +1,4 @@
 .DS_Store
 zsh/.localrc
 node/node_modules
+node/.terminalizer/token.txt
