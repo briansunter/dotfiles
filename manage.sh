@@ -6,6 +6,7 @@ symlinks=(
   vim
   git
   zsh
+  node
 )
 
 install_brew() {

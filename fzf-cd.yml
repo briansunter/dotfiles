@@ -1,0 +1,181 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: zsh
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /Users/bsunter/.dotfiles
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 80
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 25
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Terminalizer
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 1736
+    content: "\e]0;~/.dotfiles\a\r\n"
+  - delay: 26
+    content: "\e[0m\e[27m\e[24m\e[J\e[34m~/.dotfiles\e[39m\r\n\r\e[35m❯\e[39m \e[K\e[?2004h"
+  - delay: 38
+    content: "\r\r\e[A\e[0m\e[27m\e[24m\e[J\e[34m~/.dotfiles\e[39m \e[38;5;242mmaster\e[38;5;218m\e[39m\r\n\r\e[35m❯\e[39m \e[K"
+  - delay: 21
+    content: "\r\r\e[A\e[0m\e[27m\e[24m\e[J\e[34m~/.dotfiles\e[39m \e[38;5;242mmaster\e[38;5;218m*\e[39m\r\n\r\e[35m❯\e[39m \e[K"
+  - delay: 1347
+    content: "\e[32mc\e[39m\e[90md ../\e[39m\b\b\b\b\b"
+  - delay: 118
+    content: "\b\e[32mc\e[32md\e[39m"
+  - delay: 383
+    content: "\e[39m \e[39m \e[39m \e[39m \b\b\b\b\e[?2004l\r\r\n"
+  - delay: 66
+    content: "\e]0;.dotfiles: cd\a"
+  - delay: 69
+    content: "\e[?1049h\e[?1000h\e[24A\e[G\e[K\r\e[40C\e[;38;5;59m┌──────────────────────────────────────┐\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m└──────────────────────────────────────┘\e[m\e[24A\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[24A\r\e[;m                                        \r\e[;1;38;5;110m> \e[m\e[;1m\e[m\e[;1m\e[m\e[1B\r\e[;m                                        \r\e[;1;38;5;148m/\e[m\r\e[2C\e[;38;5;144m0/0\e[m\e[1A\r\e[2C\e[1B\r\e[;m                                        \r\r\e[2C\e[;38;5;144m0/8\e[m\e[1A\r\e[2C\e[1B\r\e[;m                                        \r\r\e[2C\e[;38;5;144m8/8\e[m\e[1B\r\e[;1;38;5;161;48;5;236m>\e[m\e[;1;38;5;168;48;5;236m \e[m\e[;1;38;5;254;48;5;236m..\e[m\e[1B\r\e[;1;38;5;161;48;5;236m \e[m\e[;m \e[;memacs\e[m\e[1B\r\e[;1;38;5;161;48;5;236m \e[m\e[;m \e[;mgit\e[m\e[1B\r\e[;1;38;5;161;48;5;236m \e[m\e[;m \e[;miterm\e[m\e[1B\r\e[;1;38;5;161;48;5;236m \e[m\e[;m \e[;mmacos\e[m\e[1B\r\e[;1;38;5;161;48;5;236m \e[m\e[;m \e[;mnode\e[m\e[1B\r\e[;1;38;5;161;48;5;236m \e[m\e[;m \e[;mvim\e[m\e[1B\r\e[;1;38;5;161;48;5;236m \e[m\e[;m \e[;mzsh\e[m\e[9A\r\e[2C"
+  - delay: 8
+    content: "\r\e[2C\e[1B\r\e[42C\r\e[42C\e[;m/Users/bsunter/.dotfiles/..\r\e[69C\r\e[69C\e[;m         \r\e[69C\e[1B\r\e[42C\r\e[42C\e[;m\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\r\e[42C\e[;mApplications/\r\e[55C\r\e[55C\e[;m                       \r\e[55C\e[1B\r\e[42C\r\e[42C\e[;mDesktop/\r\e[50C\r\e[50C\e[;m                            \r\e[50C\e[1B\r\e[42C\r\e[42C\e[;mDocuments/\r\e[52C\r\e[52C\e[;m                          \r\e[52C\e[1B\r\e[42C\r\e[42C\e[;mDownloads/\r\e[52C\r\e[52C\e[;m                          \r\e[52C\e[1B\r\e[42C\r\e[42C\e[;mLibrary/\r\e[50C\r\e[50C\e[;m                            \r\e[50C\e[1B\r\e[42C\r\e[42C\e[;mMovies/\r\e[49C\r\e[49C\e[;m                             \r\e[49C\e[1B\r\e[42C\r\e[42C\e[;mMusic/\r\e[48C\r\e[48C\e[;m                              \r\e[48C\e[1B\r\e[42C\r\e[42C\e[;mPictures/\r\e[51C\r\e[51C\e[;m                           \r\e[51C\e[1B\r\e[42C\r\e[42C\e[;mPublic/\r\e[49C\r\e[49C\e[;m                             \r\e[49C\e[1B\r\e[42C\r\e[42C\e[;mStandard Notes Backups/\r\e[65C\r\e[65C\e[;m             \r\e[65C\e[1B\r\e[42C\r\e[42C\e[;mcode/\r\e[47C\r\e[47C\e[;m                               \r\e[47C\e[1B\r\e[42C\r\e[42C\e[;mdeps/\r\e[47C\r\e[47C\e[;m                               \r\e[47C\e[1B\r\e[42C\r\e[42C\e[;mdonut.blend\r\e[53C\r\e[53C\e[;m                         \r\e[53C\e[1B\r\e[42C\r\e[42C\e[;mdonut.blend1\r\e[54C\r\e[54C\e[;m                        \r\e[54C\e[1B\r\e[42C\r\e[42C\e[;mnix-home/\r\e[51C\r\e[51C\e[;m                           \r\e[51C\e[1B\r\e[42C\r\e[42C\e[;mnode_modules\r\e[54C\r\e[54C\e[;m                        \r\e[54C\e[1B\r\e[42C\r\e[42C\e[;mnotes.org\r\e[51C\r\e[51C\e[;m                           \r\e[51C\e[1B\r\e[42C\r\e[42C\e[;mpackage-lock.json\r\e[59C\r\e[59C\e[;m                   \r\e[59C\e[1B\r\e[42C\r\e[42C\e[;mpackage.json\r\e[54C\r\e[54C\e[;m                        \r\e[54C\e[1B\r\e[42C\r\e[42C\e[;munity/\r\e[48C\r\e[48C\e[;m                              \r\e[48C\e[1B\r\e[42C\r\e[42C\e[;muntitled.blend\r\e[56C\r\e[56C\e[;m                      \r\e[56C\e[22A\r\e[74C\e[;7;38;5;144m1/24\e[m\e[1A\r\e[2C"
+  - delay: 176
+    content: "\e[1B\r\e[;m                                        \r\r\e[2C\e[;38;5;144m8/8\e[m\e[1A\r\e[2C"
+  - delay: 1291
+    content: "\r\e[;m                                        \r\e[;1;38;5;110m> \e[m\e[;1mz\e[m\e[;1m\e[m\r\e[3C\e[1B\r\e[;m                                        \r\r\e[2C\e[;38;5;144m1/8\e[m\e[1B\r\e[;1;38;5;161;48;5;236m>\e[m\e[;1;38;5;168;48;5;236m \e[m\e[;1;38;5;254;48;5;236m\e[m\e[;1;38;5;151;48;5;236mz\e[m\e[;1;38;5;254;48;5;236msh\e[m\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[9A\r\e[3C"
+  - delay: 10
+    content: "\e[1B\r\e[42C\r\e[42C\e[;m/Users/bsunter/.dotfiles/zsh\r\e[70C\r\e[70C\e[;m        \r\e[70C\e[1B\r\e[42C\r\e[42C\e[;m\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\r\e[42C\e[;mlib/\r\e[46C\r\e[46C\e[;m                                \r\e[46C\e[1B\r\e[42C\r\e[42C\e[;m\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[23A\r\e[3C"
+  - delay: 294
+    content: "\r\e[;m                                        \r\e[;1;38;5;110m> \e[m\e[;1mzs\e[m\e[;1m\e[m\r\e[4C\e[1B\r\e[;m                                        \r\r\e[2C\e[;38;5;144m1/8\e[m\e[1B\r\e[;1;38;5;161;48;5;236m>\e[m\e[;1;38;5;168;48;5;236m \e[m\e[;1;38;5;254;48;5;236m\e[m\e[;1;38;5;151;48;5;236mz\e[m\e[;1;38;5;254;48;5;236m\e[m\e[;1;38;5;151;48;5;236ms\e[m\e[;1;38;5;254;48;5;236mh\e[m\e[2A\r\e[4C"
+  - delay: 504
+    content: "\e[?1049l\e[?1000l"
+  - delay: 64
+    content: "\e[?1049h\e[?1000h\e[24A\e[G\e[K\r\e[40C\e[;38;5;59m┌──────────────────────────────────────┐\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m└──────────────────────────────────────┘\e[m\e[24A\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[24A\r\e[;m                                        \r\e[;1;38;5;110m> \e[m\e[;1m\e[m\e[;1m\e[m\e[1B\r\e[;m                                        \r\e[;1;38;5;148m/\e[m\r\e[2C\e[;38;5;144m0/0\e[m\e[1A\r\e[2C\e[1B\r\e[;m                                        \r\r\e[2C\e[;38;5;144m2/2\e[m\e[1B\r\e[;1;38;5;161;48;5;236m>\e[m\e[;1;38;5;168;48;5;236m \e[m\e[;1;38;5;254;48;5;236m..\e[m\e[1B\r\e[;1;38;5;161;48;5;236m \e[m\e[;m \e[;mlib\e[m\e[3A\r\e[2C"
+  - delay: 5
+    content: "\r\e[2C\e[1B\r\e[42C\r\e[42C\e[;m/Users/bsunter/.dotfiles/zsh/..\r\e[73C\r\e[73C\e[;m     \r\e[73C\e[1B\r\e[42C\r\e[42C\e[;m\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\r\e[42C\e[;mBrewfile\r\e[50C\r\e[50C\e[;m                            \r\e[50C\e[1B\r\e[42C\r\e[42C\e[;mBrewfile.lock.json\r\e[60C\r\e[60C\e[;m                  \r\e[60C\e[1B\r\e[42C\r\e[42C\e[;mREADME.md\r\e[51C\r\e[51C\e[;m                           \r\e[51C\e[1B\r\e[42C\r\e[42C\e[;memacs/\r\e[48C\r\e[48C\e[;m                              \r\e[48C\e[1B\r\e[42C\r\e[42C\e[;mgit/\r\e[46C\r\e[46C\e[;m                                \r\e[46C\e[1B\r\e[42C\r\e[42C\e[;miterm/\r\e[48C\r\e[48C\e[;m                              \r\e[48C\e[1B\r\e[42C\r\e[42C\e[;mmacos/\r\e[48C\r\e[48C\e[;m                              \r\e[48C\e[1B\r\e[42C\r\e[42C\e[;mmanage.sh\r\e[51C\r\e[51C\e[;m                           \r\e[51C\e[1B\r\e[42C\r\e[42C\e[;mnode/\r\e[47C\r\e[47C\e[;m                               \r\e[47C\e[1B\r\e[42C\r\e[42C\e[;mvim/\r\e[46C\r\e[46C\e[;m                                \r\e[46C\e[1B\r\e[42C\r\e[42C\e[;mzsh/\r\e[46C\r\e[46C\e[;m                                \r\e[46C\e[1B\r\e[42C\r\e[42C\e[;m\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[23A\r\e[2C"
+  - delay: 181
+    content: "\e[1B\r\e[;m                                        \r\r\e[2C\e[;38;5;144m2/2\e[m\e[1A\r\e[2C"
+  - delay: 698
+    content: "\r\e[;m                                        \r\e[;1;38;5;110m> \e[m\e[;1ml\e[m\e[;1m\e[m\r\e[3C\e[1B\r\e[;m                                        \r\r\e[2C\e[;38;5;144m1/2\e[m\e[1B\r\e[;1;38;5;161;48;5;236m>\e[m\e[;1;38;5;168;48;5;236m \e[m\e[;1;38;5;254;48;5;236m\e[m\e[;1;38;5;151;48;5;236ml\e[m\e[;1;38;5;254;48;5;236mib\e[m\e[1B\r\e[;m                                        \r\e[3A\r\e[3C"
+  - delay: 8
+    content: "\e[1B\r\e[42C\r\e[42C\e[;m/Users/bsunter/.dotfiles/zsh/lib\r\e[74C\r\e[74C\e[;m    \r\e[74C\e[1B\r\e[42C\r\e[42C\e[;m\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\r\e[42C\e[;mfunctions.sh\r\e[54C\r\e[54C\e[;m                        \r\e[54C\e[1B\r\e[42C\r\e[42C\e[;mzsh_plugins.txt\r\e[57C\r\e[57C\e[;m                     \r\e[57C\e[1B\r\e[42C\r\e[42C\e[;m\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[23A\r\e[3C"
+  - delay: 672
+    content: "\e[?1049l\e[?1000l"
+  - delay: 61
+    content: "\e[?1049h\e[?1000h\e[24A\e[G\e[K\r\e[40C\e[;38;5;59m┌──────────────────────────────────────┐\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m│\e[m\e[;38;5;59m                                      \e[m\e[;38;5;59m│\e[m\e[1B\r\e[40C\e[;38;5;59m└──────────────────────────────────────┘\e[m\e[24A\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[1B\r\e[;m                                        \r\e[24A\r\e[;m                                        \r\e[;1;38;5;110m> \e[m\e[;1m\e[m\e[;1m\e[m\e[1B\r\e[;m                                        \r\e[;1;38;5;148m/\e[m\r\e[2C\e[;38;5;144m0/1\e[m\e[1A\r\e[2C\e[1B\r\e[;m                                        \r\e[;1;38;5;148m/\e[m\r\e[2C\e[;38;5;144m0/1\e[m\e[1A\r\e[2C\e[1B\r\e[;m                                        \r\r\e[2C\e[;38;5;144m1/1\e[m\e[1B\r\e[;1;38;5;161;48;5;236m>\e[m\e[;1;38;5;168;48;5;236m \e[m\e[;1;38;5;254;48;5;236m..\e[m\e[2A\r\e[2C\e[1B\r\e[;m                                        \r\r\e[2C\e[;38;5;144m1/1\e[m\e[1A\r\e[2C"
+  - delay: 9
+    content: "\r\e[2C"
+  - delay: 8
+    content: "\e[1B\r\e[42C\r\e[42C\e[;m/Users/bsunter/.dotfiles/zsh/lib/..\r\e[77C\e[1B\r\e[42C\r\e[42C\e[;m\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\r\e[42C\e[;mlib/\r\e[46C\r\e[46C\e[;m                                \r\e[46C\e[1B\r\e[42C\r\e[42C\e[;m\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[1B\r\e[42C\e[;m                                    \r\e[42C\e[23A\r\e[2C"
+  - delay: 175
+    content: "\e[1B\r\e[;m                                        \r\r\e[2C\e[;38;5;144m1/1\e[m\e[1A\r\e[2C"
+  - delay: 850
+    content: "\e[?1049l\e[?1000l\e]0;~/.dotfiles/zsh/lib\a\r\n"
+  - delay: 20
+    content: "\e[0m\e[27m\e[24m\e[J\e[34m~/.dotfiles/zsh/lib\e[39m \e[38;5;242mmaster\e[38;5;218m*\e[39m\r\n\r\e[35m❯\e[39m \e[K\e[?2004h"
+  - delay: 341
+    content: "\e[1m\e[31ml\e[0m\e[39m\e[90ms\e[39m\b"
+  - delay: 102
+    content: "\b\e[0m\e[32ml\e[32ms\e[39m"
+  - delay: 298
+    content: "\e[?2004l\r\r\n"
+  - delay: 49
+    content: "\e]0;lib: ls_ext\a"
+  - delay: 41
+    content: "total 16\r\ndrwxr-xr-x  4 bsunter  staff   128 Dec 27 22:09 \e[34m.\e[39;49m\e[0m/\r\ndrwxr-xr-x  6 bsunter  staff   192 Dec 27 22:06 \e[34m..\e[39;49m\e[0m/\r\n-rw-r--r--  1 bsunter  staff  2236 Dec 27 21:26 functions.sh\r\n-rw-r--r--  1 bsunter  staff   355 Nov 13 19:58 zsh_plugins.txt\r\n\e]0;~/.dotfiles/zsh/lib\a\r\n"
+  - delay: 18
+    content: "\e[0m\e[27m\e[24m\e[J\e[34m~/.dotfiles/zsh/lib\e[39m \e[38;5;242mmaster\e[38;5;218m*\e[39m\r\n\r\e[35m❯\e[39m \e[K\e[?2004h"
+  - delay: 1006
+    content: "\e[?2004l\r\r\n"
