@@ -1,6 +1,6 @@
 # settings
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
-
+export PATH="$HOME/.dotfiles/node/node_modules/.bin:$PATH"
 ## Terminal Vim Mode
 bindkey -v
 export KEYTIMEOUT=1
