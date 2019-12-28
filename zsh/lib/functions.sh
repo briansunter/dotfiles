@@ -35,7 +35,7 @@ function cd() {
                 __cd_path="$(echo $(pwd)/${__cd_nxt} | sed "s;//;/;")";
                 echo $__cd_path;
                 echo;
-                ls -p --color=always "${__cd_path}";
+                ls -p "${__cd_path}";
         ')"
     [[ ${#dir} != 0 ]] || return 0
     builtin cd "$dir" &> /dev/null
