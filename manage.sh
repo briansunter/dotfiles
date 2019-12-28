@@ -27,6 +27,11 @@ bootstrap() {
 
   echo "Setting up macos"
   ./macos/bootstrap.sh
+
+  echo "Installing node tools"
+  pushd node
+  npm install
+  popd
   popd
 }
 
