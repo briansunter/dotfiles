@@ -11,6 +11,10 @@ alias ec='emacsclient -c'
 alias simple-serve='python -m SimpleHTTPServer 8000'
 alias dot="$HOME/.dotfiles/manage.sh bootstrap"
 
+# gpg
+GPG_TTY=$(tty)
+export GPG_TTY
+
 # history
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000000
@@ -58,3 +62,5 @@ unset fasd_cache
 
 # functions
 . ~/.dotfiles/zsh/lib/functions.sh
+
+test -f ~/.dotfiles/zsh/.localrc && source ~/.dotfiles/zsh/.localrc
