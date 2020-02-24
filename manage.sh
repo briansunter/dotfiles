@@ -6,6 +6,7 @@ symlinks=(
   vim
   git
   zsh
+  skhd
   node
 )
 
