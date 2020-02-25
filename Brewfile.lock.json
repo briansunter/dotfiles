@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "a891c9b8e2075aa2f9a7cf14acfcdc1bd3eeb95d"
+        "revision": "17c8b966ff6f20def294e83f8e020bac13f9627c"
       },
       "d12frosted/emacs-plus": {
         "revision": "fa0f7f09ba3486a66095f2fa085d297da033089b"
@@ -502,7 +502,10 @@
         "version": "0.35.2",
         "bottle": false
       },
-      "openssl": null,
+      "openssl": {
+        "version": "1.0.2t",
+        "bottle": null
+      },
       "pandoc": {
         "version": "2.9.2",
         "bottle": {
@@ -708,6 +711,27 @@
       "yabai": {
         "version": "2.3.0",
         "bottle": false
+      },
+      "wget": {
+        "version": "1.20.3_2",
+        "bottle": {
+          "cellar": "/usr/local/Cellar",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/wget-1.20.3_2.catalina.bottle.tar.gz",
+              "sha256": "ef65c759c5097a36323fa9c77756468649e8d1980a3a4e05695c05e39568967c"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/wget-1.20.3_2.mojave.bottle.tar.gz",
+              "sha256": "28f4090610946a4eb207df102d841de23ced0d06ba31cb79e040d883906dcd4f"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/wget-1.20.3_2.high_sierra.bottle.tar.gz",
+              "sha256": "91dd0caca9bd3f38c439d5a7b6f68440c4274945615fae035ff0a369264b8a2f"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -718,7 +742,7 @@
         }
       },
       "android-studio": {
-        "version": "3.5.3.0,191.6010548",
+        "version": "3.5.2.0,191.5977832",
         "options": {
           "full_name": "android-studio"
         }
@@ -754,7 +778,7 @@
         }
       },
       "docker": {
-        "version": "2.1.0.5,40693",
+        "version": "2.1.0.3,38240",
         "options": {
           "full_name": "docker"
         }
@@ -766,37 +790,37 @@
         }
       },
       "google-chrome": {
-        "version": "79.0.3945.88",
+        "version": "77.0.3865.90",
         "options": {
           "full_name": "google-chrome"
         }
       },
       "iterm2": {
-        "version": "3.3.7",
+        "version": "3.3.4",
         "options": {
           "full_name": "iterm2"
         }
       },
       "java": {
-        "version": "13.0.2,8:d4173c853231432d94f001e99d882ca7",
+        "version": null,
         "options": {
           "full_name": "java"
         }
       },
       "keybase": {
-        "version": "5.1.1-20191211223249,15bbb94c23",
+        "version": "4.5.0-20190919040131,93e889ab01",
         "options": {
           "full_name": "keybase"
         }
       },
       "postman": {
-        "version": "7.13.0",
+        "version": "7.11.0",
         "options": {
           "full_name": "postman"
         }
       },
       "private-internet-access": {
-        "version": "1.7-03949",
+        "version": "1.5.1-03605",
         "options": {
           "full_name": "private-internet-access"
         }
@@ -844,7 +868,7 @@
         }
       },
       "tor-browser": {
-        "version": "9.0.2",
+        "version": "8.5.5",
         "options": {
           "full_name": "tor-browser"
         }
@@ -862,10 +886,10 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.6",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "1ca9851f299d383843972104ad90b6e4b7641165",
-        "CLT": "11.0.33.17",
+        "Homebrew/homebrew-core": "48f2c038a13b9b22ce15ea1e507158b61825864e",
+        "CLT": "11.0.33.16",
         "Xcode": "11.3.1",
-        "macOS": "10.15.3"
+        "macOS": "10.15.2"
       }
     }
   }
