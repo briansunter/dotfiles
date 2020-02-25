@@ -39,6 +39,7 @@ brew "stow"
 brew "terraform"
 brew "tig"
 brew "tmux"
+brew "wget"
 brew "tree"
 brew "yabai"
 
