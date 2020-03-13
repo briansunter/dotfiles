@@ -8,3 +8,8 @@
 
 ## Update
 `dot`
+
+## install desktop manager
+sudo yabai --install-sa
+brew services restart yabai
+killall Dock
