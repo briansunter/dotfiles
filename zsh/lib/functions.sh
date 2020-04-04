@@ -91,3 +91,23 @@ keybase pgp export | gpg --import
 keybase pgp export --secret | gpg --allow-secret-key-import --import
 }
 
+function biggest-folders (){
+    count=20
+    while getopts ":n:" opt; do
+        case ${opt} in
+            n )
+                count=$OPTARG
+                ;;
+            \? )
+                echo "Invalid option: $OPTARG" 1>&2
+                ;;
+            : )
+                echo "Invalid option: $OPTARG requires an argument" 1>&2
+                ;;
+        esac
+    done
+    shift $((OPTIND -1))
+
+    du -a . | sort -n -r | head -n $count 
+}
+
