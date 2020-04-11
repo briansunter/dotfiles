@@ -91,7 +91,7 @@ keybase pgp export | gpg --import
 keybase pgp export --secret | gpg --allow-secret-key-import --import
 }
 
-function biggest-folders (){
+function biggest-files (){
     count=20
     while getopts ":n:" opt; do
         case ${opt} in
@@ -108,6 +108,9 @@ function biggest-folders (){
     done
     shift $((OPTIND -1))
 
-    du -a . | sort -n -r | head -n $count 
+    du -a . | sort -n -r | head -n $count
 }
 
+remove-all-files () {
+    find . -delete
+}
