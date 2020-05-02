@@ -13,6 +13,7 @@
     "homebridge": "^0.4.52",
     "homebridge-config-ui-x": "^4.12.0",
     "homebridge-tplink-smarthome": "^4.0.1",
-    "terminalizer": "^0.7.1"
+    "terminalizer": "^0.7.1",
+    "tern": "^0.24.3"
   }
 }
