@@ -84,3 +84,5 @@
 	newHighlight = "green bold 22"
 [gpg]
 	program = gpg
+[github]
+	user = briansunter
