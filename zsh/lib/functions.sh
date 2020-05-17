@@ -114,3 +114,7 @@ function biggest-files (){
 remove-all-files () {
     find . -delete
 }
+
+function take-pictuure (){
+ffmpeg -f avfoundation -video_size 1920x1080 -framerate 30 -i "0" -vframes 1 out.jpg
+}
