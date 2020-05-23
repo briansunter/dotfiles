@@ -73,7 +73,8 @@ This function should only modify configuration layer settings."
      treemacs
      typography
      terraform
-     (typescript :variables typescript-fmt-on-save t)
+     (typescript :variables typescript-fmt-on-save t
+                 typescript-fmt-tool 'prettier)
      version-control
      yaml)
    ;; List of additional packages that will be installed without being

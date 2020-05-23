@@ -48,6 +48,7 @@ brew "wget"
 brew "tree"
 brew "yabai"
 brew "yamllint"
+brew "virtualbox"
 
 cask "adoptopenjdk"
 cask "android-studio"
