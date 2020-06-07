@@ -62,6 +62,7 @@ This function should only modify configuration layer settings."
      pandoc
      purescript
      racket
+     (ranger :variables ranger-show-preview t)
      react
      rust
      scala
