@@ -11,8 +11,8 @@
   "dependencies": {
     "depcheck": "^0.9.2",
     "homebridge": "^0.4.53",
-    "homebridge-config-ui-x": "^4.19.0",
-    "homebridge-tplink-smarthome": "^4.0.1",
+    "homebridge-config-ui-x": "^4.21.0",
+    "homebridge-tplink-smarthome": "^5.1.0",
     "js-beautify": "^1.11.0",
     "terminalizer": "^0.7.2",
     "tern": "^0.24.3"
