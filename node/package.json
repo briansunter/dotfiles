@@ -14,8 +14,10 @@
     "homebridge-config-ui-x": "^4.21.0",
     "homebridge-tplink-smarthome": "^5.1.0",
     "js-beautify": "^1.11.0",
+    "openzeppelin-solidity": "^3.0.2",
     "terminalizer": "^0.7.2",
-    "tern": "^0.24.3"
+    "tern": "^0.24.3",
+    "truffle": "^5.1.30"
   },
   "devDependencies": {
     "prettier": "2.0.5"
