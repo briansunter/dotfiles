@@ -64,3 +64,6 @@ unset fasd_cache
 . ~/.dotfiles/zsh/lib/functions.sh
 
 test -f ~/.dotfiles/zsh/.localrc && source ~/.dotfiles/zsh/.localrc
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
