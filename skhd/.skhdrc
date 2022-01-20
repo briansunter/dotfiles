@@ -2,7 +2,7 @@
 #                     be found at https://github.com/koekeishiya/skhd/issues/1
 
 # open terminal
-cmd - return :  /Applications/iTerm.app/Contents/MacOS/iTerm2
+# cmd - return :  /Applications/iTerm.app/Contents/MacOS/iTerm2
 
 # open Safari
 cmd + shift - return : open -a Firefox
