@@ -12,6 +12,7 @@ symlinks=(
 
 install_brew() {
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
   if ! [ -x "$(command -v brew)" ]; then
     echo "Installing Homebrew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -32,6 +33,9 @@ bootstrap() {
 
   echo "Installing node tools"
   pushd node
+  export NVM_DIR=~/.nvm
+  source "$(brew --prefix nvm)/nvm.sh"
+  nvm install
   npm install
   popd
   popd
