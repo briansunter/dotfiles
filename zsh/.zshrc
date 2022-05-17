@@ -6,10 +6,12 @@ bindkey -v
 export KEYTIMEOUT=1
 
 # aliases
-export EDITOR='nvim';
+export EDITOR='nvim'
+alias vim='nvim'
 alias ec='emacsclient -c'
 alias simple-serve='python -m SimpleHTTPServer 8000'
 alias dot="$HOME/.dotfiles/manage.sh bootstrap"
+alias dote="vim $( find  ~/.dotfiles -type f | fzf)"
 
 # gpg
 GPG_TTY=$(tty)
