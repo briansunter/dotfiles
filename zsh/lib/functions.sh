@@ -118,3 +118,7 @@ remove-all-files () {
 function take-picture (){
 ffmpeg -f avfoundation -video_size 1920x1080 -framerate 30 -i "0" -vframes 1 out.jpg
 }
+
+function dote () {
+  vim $( find  ~/.dotfiles -type f | fzf)
+}
