@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@bazel/bazelisk": "^1.11.0",
     "aws-cdk": "^2.17.0",
     "depcheck": "^1.4.3",
     "homebridge": "^1.4.0",
@@ -16,6 +17,7 @@
     "homebridge-tplink-smarthome": "^7.0.1",
     "js-beautify": "^1.14.0",
     "openzeppelin-solidity": "^4.5.0",
+    "pnpm": "^7.1.2",
     "tern": "^0.24.3",
     "truffle": "^5.5.5"
   },

@@ -86,3 +86,5 @@
 	program = gpg
 [github]
 	user = briansunter
+[rebase]
+	autoStash = true

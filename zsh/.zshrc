@@ -9,9 +9,8 @@ export KEYTIMEOUT=1
 export EDITOR='nvim'
 alias vim='nvim'
 alias ec='emacsclient -c'
-alias simple-serve='python -m SimpleHTTPServer 8000'
+alias simple-serve='python -m http.server 8000'
 alias dot="$HOME/.dotfiles/manage.sh bootstrap"
-alias dote="vim $( find  ~/.dotfiles -type f | fzf)"
 
 # gpg
 GPG_TTY=$(tty)
@@ -66,6 +65,3 @@ unset fasd_cache
 . ~/.dotfiles/zsh/lib/functions.sh
 
 test -f ~/.dotfiles/zsh/.localrc && source ~/.dotfiles/zsh/.localrc
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
