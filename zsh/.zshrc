@@ -1,4 +1,5 @@
 # settings
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 export PATH="$HOME/.dotfiles/node/node_modules/.bin:$PATH"
 ## Terminal Vim Mode
@@ -13,8 +14,8 @@ alias simple-serve='python -m http.server 8000'
 alias dot="$HOME/.dotfiles/manage.sh bootstrap"
 
 # gpg
-GPG_TTY=$(tty)
-export GPG_TTY
+export GPG_TTY=$(tty)
+gpgconf --launch gpg-agent
 
 # history
 HISTFILE="$HOME/.zsh_history"

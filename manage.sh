@@ -15,7 +15,8 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
   if ! [ -x "$(command -v brew)" ]; then
     echo "Installing Homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
   fi
 }
 
