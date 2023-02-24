@@ -66,3 +66,8 @@ unset fasd_cache
 . ~/.dotfiles/zsh/lib/functions.sh
 
 test -f ~/.dotfiles/zsh/.localrc && source ~/.dotfiles/zsh/.localrc
+
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+export PATH=$PATH:$GOROOT/bin

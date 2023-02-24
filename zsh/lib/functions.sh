@@ -122,3 +122,52 @@ ffmpeg -f avfoundation -video_size 1920x1080 -framerate 30 -i "0" -vframes 1 out
 function dote () {
   vim $( find  ~/.dotfiles -type f | fzf)
 }
+
+gif2mp4() {
+  local output_folder=${2:-.}
+  local output_file="$output_folder/${1%.*}.mp4"
+  ffmpeg -i "$1" -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" "$output_file"
+}
+mp42gif() {
+  local output_folder=${2:-.}
+  local output_file="$output_folder/${1%.*}.gif"
+  ffmpeg -i "$1" \
+  -vf "fps=10,scale=600:-2:flags=lanczos,split[s0][s1];\
+[s0]palettegen=max_colors=128:reserve_transparent=0[p];\
+[s1][p]paletteuse" \
+-y "$output_file"
+
+}
+
+vidresize() {
+  local width=${2:-"720"}
+  local out_file="${1%.*}-${width}.${1##*.}"
+  local height='trunc(ow/a/2)*2'
+  ffmpeg -i "$1" -vf scale="$width:$height" "$out_file"
+}
+
+function rm-confirm() {
+  # Check if the user has provided any arguments
+  if [ $# -eq 0 ]; then
+    echo "Usage: rm-confirm <file1> <file2> ..."
+    return 1
+  fi
+
+  # Print the list of files to be deleted
+  echo "The following files will be deleted:"
+  for file in "$@"; do
+    echo "$file"
+  done
+
+  # Ask for confirmation
+  echo -n "Are you sure you want to delete these files? (y/n) "
+  read answer
+  if [ "$answer" != "y" ]; then
+    echo "Aborting..."
+    return 1
+  fi
+
+  # Delete the files
+  command rm "$@"
+}
+

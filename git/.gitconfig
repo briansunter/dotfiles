@@ -1,6 +1,6 @@
 # https://gist.github.com/scottnonnenberg/fefa3f65fdb3715d25882f3023b31c29
 [user]
-	email = public@briansunter.com
+	email = 2816289+briansunter@users.noreply.github.com
 	name = Brian Sunter
 	signingkey = 36EFC56992EC0C0D
 
@@ -47,6 +47,7 @@
 	followTags = true
 	# Because I get sick of telling git to do it manually
 	# https://git-scm.com/docs/git-config#git-config-pushfollowTags
+	autoSetupRemote = true
 
 [pull]
    rebase = true
@@ -95,3 +96,8 @@
 	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
 	allowed = AKIAIOSFODNN7EXAMPLE
 	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

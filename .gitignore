@@ -3,3 +3,4 @@ zsh/.localrc
 node/node_modules
 node/.terminalizer/token.txt
 Brewfile.lock.json
+.vscode
