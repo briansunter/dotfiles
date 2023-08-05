@@ -21,6 +21,7 @@
 	# No need for a GUI - a nice, colorful, graphical representation
 	# https://git-scm.com/docs/git-log
 	# via https://medium.com/@payload.dd/thanks-for-the-git-st-i-will-use-this-4da5839a21a4
+	detailed-log = log --graph --oneline --decorate --all
 
 [merge]
 	ff = only
@@ -33,7 +34,7 @@
 	# https://git-scm.com/docs/git-config#git-config-mergeconflictStyle
 
 [commit]
-	gpgsign = false
+	gpgsign = true
 	# "other people can trust that the changes you've made really were made by you"
 	# https://help.github.com/articles/about-gpg/
 	# https://git-scm.com/docs/git-config#git-config-commitgpgSign
@@ -48,6 +49,9 @@
 	# Because I get sick of telling git to do it manually
 	# https://git-scm.com/docs/git-config#git-config-pushfollowTags
 	autoSetupRemote = true
+
+	# Push current
+	push = current
 
 [pull]
    rebase = true
@@ -71,6 +75,8 @@
 	cmd = diff-so-fancy $LOCAL $REMOTE
 [core]
 	pager = diff-so-fancy | less --tabs=1,5 -R
+[color]
+	ui = true
 [color "diff"]
 	meta = "yellow bold"
 	commit = "green bold"
@@ -93,11 +99,18 @@
 	providers = git secrets --aws-provider
 	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
 	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
-	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
 	allowed = AKIAIOSFODNN7EXAMPLE
 	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[init]
+	templateDir = /Users/bsunter/.git-templates/git-secrets
+[help]
+	autocorrect = 1
+
+[credential]
+	helper = cache --timeout=3600

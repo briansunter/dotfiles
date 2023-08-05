@@ -1,4 +1,6 @@
 # settings
+export FUNCNEST=2000
+
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 export PATH="$HOME/.dotfiles/node/node_modules/.bin:$PATH"
@@ -71,3 +73,13 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export PATH=$PATH:$GOROOT/bin
+eval "$(github-copilot-cli alias -- "$0")"
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# pnpm
+export PNPM_HOME="/Users/bsunter/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

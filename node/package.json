@@ -9,20 +9,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@bazel/bazelisk": "^1.11.0",
-    "aws-cdk": "^2.17.0",
+    "@bazel/bazelisk": "^1.12.1",
+    "@githubnext/github-copilot-cli": "^0.1.33",
+    "aws-cdk": "^2.90.0",
     "depcheck": "^1.4.3",
-    "homebridge": "^1.4.0",
-    "homebridge-config-ui-x": "^4.42.0",
+    "homebridge": "^1.6.1",
+    "homebridge-config-ui-x": "^4.50.4",
     "homebridge-tplink-smarthome": "^7.0.1",
-    "js-beautify": "^1.14.0",
+    "js-beautify": "^1.14.9",
     "openzeppelin-solidity": "^4.5.0",
-    "pnpm": "^7.1.2",
+    "pnpm": "^8.6.11",
     "tern": "^0.24.3",
-    "truffle": "^5.5.5"
+    "truffle": "^5.11.2"
   },
   "devDependencies": {
-    "prettier": "2.6.0",
-    "typescript-language-server": "^0.9.7"
+    "prettier": "3.0.1",
+    "typescript-language-server": "^3.3.2"
   }
 }

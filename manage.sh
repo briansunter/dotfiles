@@ -40,6 +40,12 @@ bootstrap() {
   npm install
   popd
   popd
+
+  echo "Set up Git Secrets"
+  git secrets --register-aws --global
+  git secrets --add-provider -- cat git/git-secrets-patterns.txt
+  git secrets --install ~/.git-templates/git-secrets
+  git config --global init.templateDir ~/.git-templates/git-secrets
 }
 
 if declare -f "$1" > /dev/null
