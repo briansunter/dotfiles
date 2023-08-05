@@ -8,6 +8,7 @@ symlinks=(
   zsh
   skhd
   node
+  gpg
 )
 
 install_brew() {
