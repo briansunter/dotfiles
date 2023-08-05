@@ -2,7 +2,7 @@
 [user]
 	email = 2816289+briansunter@users.noreply.github.com
 	name = Brian Sunter
-	signingkey = 36EFC56992EC0C0D
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM6+jtJJ05Fe1SrZJkXKEyhafAQHocrfBwCX3KoJBJF2
 
 [alias]
 	prune = fetch --prune
@@ -91,6 +91,7 @@
 	newHighlight = "green bold 22"
 [gpg]
 	program = gpg
+	format = ssh
 [github]
 	user = briansunter
 [rebase]
@@ -114,3 +115,5 @@
 
 [credential]
 	helper = cache --timeout=3600
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
