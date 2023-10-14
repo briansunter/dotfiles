@@ -9,6 +9,7 @@ symlinks=(
   skhd
   node
   gpg
+  phoenix
 )
 
 install_brew() {
