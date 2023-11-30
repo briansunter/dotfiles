@@ -35,7 +35,7 @@ def combine_csvs_in_folder(folder_path, output_file):
 def main():
     parser = argparse.ArgumentParser(description='Combine all CSV files in a folder into one CSV file.')
     parser.add_argument('--folder_path', help='Path to folder containing CSV files', default=os.getcwd())
-    parser.add_argument('--output_file', help='Path to output CSV file', default='combined.csv')
+    parser.add_argument('--output_file', help='Path to output CSV file', default='combined_bytime.csv')
     args = parser.parse_args()
 
     if os.path.exists(args.output_file):
