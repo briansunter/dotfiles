@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import pandas as pd
 import matplotlib.pyplot as plt
+
 def main():
     # Load the dataset
     combined_data_path = 'combined.csv'
@@ -14,17 +15,17 @@ def main():
     # Ensure the time column is in datetime format
     combined_data['time'] = pd.to_datetime(combined_data['time']).dt.tz_convert(None)
 
-    # Resample the data to sum up the metrics for each week and count tweets per week
+    # Resample the data to sum up the metrics for each month and count tweets per month
     combined_data.set_index('time', inplace=True)
-    weekly_data = combined_data.resample('W').sum()
-    weekly_tweet_count = combined_data.resample('W').size()
+    monthly_data = combined_data.resample('M').sum()
+    monthly_tweet_count = combined_data.resample('M').size()
 
     # Calculate engagement rate per tweet as impressions to engagements
-    weekly_data['engagement_rate'] = weekly_data['engagements'] / weekly_data['impressions']
+    monthly_data['engagement_rate'] = monthly_data['engagements'] / monthly_data['impressions']
 
-    # Calculate the 6-week rolling average for the last 12 weeks for tweets and engagement rate
-    avg_tweets_6_weeks = weekly_tweet_count[-12:].rolling(window=6).mean().iloc[-1]
-    avg_engagement_rate_6_weeks = weekly_data['engagement_rate'][-12:].rolling(window=6).mean().iloc[-1]
+    # Calculate the 6-month rolling average for the last 12 months for tweets and engagement rate
+    avg_tweets_6_months = monthly_tweet_count[-12:].rolling(window=6).mean().iloc[-1]
+    avg_engagement_rate_6_months = monthly_data['engagement_rate'][-12:].rolling(window=6).mean().iloc[-1]
 
     # Group by 'Date' instead of 'start_date'
     monthly_follows = bytime_data.groupby(pd.Grouper(key='Date', freq='M')).agg({'follows': 'sum'})
@@ -42,52 +43,126 @@ def main():
     # Calculate average followers per tweet
     average_followers_per_tweet_monthly = combined_monthly_data['followers_per_tweet'].mean()
 
-    # Plotting number of tweets per week with 6-week average
-
-    # Plotting engagement rate per week with 6-week average
-
+    # Plotting number of tweets per month with 6-month average
+    # Plotting engagement rate per month with 6-month average
     # Plotting followers per tweet
     fig, axs = plt.subplots(3, 1, figsize=(14, 21))
 
-    # Plotting number of tweets per week with 6-week average
-    plot_tweets_per_week(weekly_tweet_count[-12:], avg_tweets_6_weeks, axs[0])
+    # Plotting number of tweets per month with 6-month average
+    plot_tweets_per_month(monthly_tweet_count, axs[0])
 
-    # Plotting engagement rate per week with 6-week average
-    plot_engagement_rate(weekly_data['engagement_rate'][-12:], avg_engagement_rate_6_weeks, axs[1])
-
+    # Plotting engagement rate per month with 6-month average
+    plot_engagement_rate(monthly_data['engagement_rate'][-12:], axs[1])
     # Plotting followers per tweet
-    plot_followers_per_tweet(combined_monthly_data, average_followers_per_tweet_monthly, axs[2])
-
+    plot_followers_per_tweet(combined_monthly_data, axs[2])
     # Save the figure
     plt.tight_layout()
     plt.savefig('out/tweet_quality.png')
     plt.close()
 
-def plot_tweets_per_week(weekly_tweet_count, avg_tweets_6_weeks, ax):
-    ax.bar(weekly_tweet_count.index, weekly_tweet_count, color='tab:blue')
-    ax.axhline(y=avg_tweets_6_weeks, color='gray', linestyle='--', linewidth=2)
-    ax.text(x=weekly_tweet_count.index[0], y=avg_tweets_6_weeks, s=f' Avg: {avg_tweets_6_weeks:.2f}', verticalalignment='bottom')
-    ax.set_xlabel('Week')
-    ax.set_ylabel('Number of Tweets')
-    ax.set_title('Number of Tweets per Week with 6-week Average')
-    plt.xticks(rotation=45)
+def plot_tweets_per_month(monthly_tweet_count, ax):
+    # Calculate the average for the latest 3 months
+    avg_tweets_3_months = monthly_tweet_count[-3:].mean()
 
-def plot_engagement_rate(engagement_rate, avg_engagement_rate_6_weeks, ax):
-    ax.plot(engagement_rate.index, engagement_rate, color='tab:red', marker='o', linestyle='-')
-    ax.axhline(y=avg_engagement_rate_6_weeks, color='gray', linestyle='--', linewidth=2)
-    ax.text(x=engagement_rate.index[0], y=avg_engagement_rate_6_weeks, s=f' Avg: {avg_engagement_rate_6_weeks:.4f}', verticalalignment='bottom')
-    ax.set_xlabel('Week')
-    ax.set_ylabel('Engagement Rate')
-    ax.set_title('Engagement Rate per Week with 6-week Average')
-    plt.xticks(rotation=45)
+    # Calculate the average for the previous 3 months
+    prev_avg_tweets_3_months = monthly_tweet_count[-6:-3].mean()
 
-def plot_followers_per_tweet(combined_monthly_data, average_followers_per_tweet_monthly, ax):
-    ax.bar(combined_monthly_data.index, combined_monthly_data['followers_per_tweet'], width=20, color='tab:green')
-    ax.axhline(y=average_followers_per_tweet_monthly, color='gray', linestyle='--', linewidth=2)
-    ax.text(x=combined_monthly_data.index[0], y=average_followers_per_tweet_monthly, s=f' Avg: {average_followers_per_tweet_monthly:.2f}', verticalalignment='bottom')
-    ax.set_xlabel('Month')
-    ax.set_ylabel('Followers per Tweet')
-    ax.set_title('Monthly Followers per Tweet with Average')
-    plt.xticks(rotation=45)
+    # Calculate percentage difference
+    diff_percent = ((avg_tweets_3_months - prev_avg_tweets_3_months) / prev_avg_tweets_3_months) * 100
+
+    # Choose color based on difference
+    color = 'green' if diff_percent >= 0 else 'red'
+
+    # Plot previous 3-month average
+    ax.axhline(y=prev_avg_tweets_3_months, color='gray', linestyle=':', linewidth=2)
+    ax.text(monthly_tweet_count.index[-6], prev_avg_tweets_3_months, f' Prev Avg: {prev_avg_tweets_3_months:.2f}', verticalalignment='bottom', fontsize=12)
+
+    # Plot current 3-month average
+    ax.axhline(y=avg_tweets_3_months, color='gray', linestyle='--', linewidth=2)
+    ax.text(monthly_tweet_count.index[-3], avg_tweets_3_months, f' Current Avg: {avg_tweets_3_months:.2f}', verticalalignment='bottom', fontsize=12)
+
+    # Plot percentage difference
+    ax.text(monthly_tweet_count.index[-1], avg_tweets_3_months, f' Diff: {diff_percent:.2f}%', verticalalignment='top', color=color, fontsize=12)
+
+    # Plot the bar chart
+    ax.bar(monthly_tweet_count.index, monthly_tweet_count, color='tab:blue', width=20.0)  # Increase width here
+
+    # Set labels and title
+    ax.set_xlabel('Month', fontsize=14)
+    ax.set_ylabel('Number of Tweets', fontsize=14)
+    ax.set_title('Number of Tweets per Month', fontsize=16)
+    ax.grid(True)
+    plt.xticks(rotation=45, fontsize=12)
+    plt.yticks(fontsize=12)
+
+def plot_engagement_rate(engagement_rate, ax):
+    # Calculate the average for the latest 3 months
+    avg_engagement_rate_3_months = engagement_rate[-3:].mean()
+
+    # Calculate the average for the previous 3 months
+    prev_avg_engagement_rate_3_months = engagement_rate[-6:-3].mean()
+
+    # Calculate percentage difference
+    diff_percent = ((avg_engagement_rate_3_months - prev_avg_engagement_rate_3_months) / prev_avg_engagement_rate_3_months) * 100
+
+    # Choose color based on difference
+    color = 'green' if diff_percent >= 0 else 'red'
+
+    # Plot previous 3-month average
+    ax.axhline(y=prev_avg_engagement_rate_3_months, color='gray', linestyle=':', linewidth=2)
+    ax.text(engagement_rate.index[-6], prev_avg_engagement_rate_3_months, f' Prev Avg: {prev_avg_engagement_rate_3_months:.4f}', verticalalignment='bottom', fontsize=12)
+
+    # Plot current 3-month average
+    ax.axhline(y=avg_engagement_rate_3_months, color='gray', linestyle='--', linewidth=2)
+    ax.text(engagement_rate.index[-3], avg_engagement_rate_3_months, f' Current Avg: {avg_engagement_rate_3_months:.4f}', verticalalignment='bottom', fontsize=12)
+
+    # Plot percentage difference
+    ax.text(engagement_rate.index[-1], avg_engagement_rate_3_months, f' Diff: {diff_percent:.2f}%', verticalalignment='top', color=color, fontsize=12)
+
+    # Plot the line chart
+    ax.plot(engagement_rate.index, engagement_rate, color='tab:red', marker='o', linestyle='-', markersize=8)
+
+    # Set labels and title
+    ax.set_xlabel('Month', fontsize=14)
+    ax.set_ylabel('Engagement Rate', fontsize=14)
+    ax.set_title('Engagement Rate per Month', fontsize=16)
+    ax.grid(True)
+    plt.xticks(rotation=45, fontsize=12)
+    plt.yticks(fontsize=12)
+
+def plot_followers_per_tweet(combined_monthly_data, ax):
+    # Calculate the average for the latest 3 months
+    avg_followers_per_tweet_3_months = combined_monthly_data['followers_per_tweet'][-3:].mean()
+
+    # Calculate the average for the previous 3 months
+    prev_avg_followers_per_tweet_3_months = combined_monthly_data['followers_per_tweet'][-6:-3].mean()
+
+    # Calculate percentage difference
+    diff_percent = ((avg_followers_per_tweet_3_months - prev_avg_followers_per_tweet_3_months) / prev_avg_followers_per_tweet_3_months) * 100
+
+    # Choose color based on difference
+    color = 'green' if diff_percent >= 0 else 'red'
+
+    # Plot previous 3-month average
+    ax.axhline(y=prev_avg_followers_per_tweet_3_months, color='gray', linestyle=':', linewidth=2)
+    ax.text(combined_monthly_data.index[-6], prev_avg_followers_per_tweet_3_months, f' Prev Avg: {prev_avg_followers_per_tweet_3_months:.2f}', verticalalignment='bottom', fontsize=12)
+
+    # Plot current 3-month average
+    ax.axhline(y=avg_followers_per_tweet_3_months, color='gray', linestyle='--', linewidth=2)
+    ax.text(combined_monthly_data.index[-3], avg_followers_per_tweet_3_months, f' Current Avg: {avg_followers_per_tweet_3_months:.2f}', verticalalignment='bottom', fontsize=12)
+
+    # Plot percentage difference
+    ax.text(combined_monthly_data.index[-1], avg_followers_per_tweet_3_months, f' Diff: {diff_percent:.2f}%', verticalalignment='top', color=color, fontsize=12)
+
+    # Plot the bar chart
+    ax.bar(combined_monthly_data.index, combined_monthly_data['followers_per_tweet'], color='tab:green')
+
+    # Set labels and title
+    ax.set_xlabel('Month', fontsize=14)
+    ax.set_ylabel('Followers per Tweet', fontsize=14)
+    ax.set_title('Followers per Tweet per Month', fontsize=16)
+    ax.grid(True)
+    plt.xticks(rotation=45, fontsize=12)
+    plt.yticks(fontsize=12)
 
 main()
