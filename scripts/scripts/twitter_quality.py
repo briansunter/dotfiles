@@ -58,6 +58,21 @@ def main():
     # Save the figure
     plt.tight_layout()
     plt.savefig('out/tweet_quality.png')
+    fig, axs = plt.subplots(3, 1, figsize=(10, 15))
+
+    # Plotting follower growth over time
+    plot_follower_growth(bytime_data, axs[0])
+
+    # Plotting follower growth rate
+    # Plotting engagements over time
+    plot_engagements_over_time(combined_data, axs[1])
+
+    plot_impressions_over_time(combined_data, axs[2])  # New plot for impressions
+
+
+    # Save the figure
+    plt.tight_layout()
+    plt.savefig('out/combined_plots.png')
     plt.close()
 
 def plot_tweets_per_month(monthly_tweet_count, ax):
@@ -155,7 +170,7 @@ def plot_followers_per_tweet(combined_monthly_data, ax):
     ax.text(combined_monthly_data.index[-1], avg_followers_per_tweet_3_months, f' Diff: {diff_percent:.2f}%', verticalalignment='top', color=color, fontsize=12)
 
     # Plot the bar chart
-    ax.bar(combined_monthly_data.index, combined_monthly_data['followers_per_tweet'], color='tab:green')
+    ax.bar(combined_monthly_data.index, combined_monthly_data['followers_per_tweet'], color='tab:green', width=20.0)
 
     # Set labels and title
     ax.set_xlabel('Month', fontsize=14)
@@ -165,4 +180,36 @@ def plot_followers_per_tweet(combined_monthly_data, ax):
     plt.xticks(rotation=45, fontsize=12)
     plt.yticks(fontsize=12)
 
+def plot_follower_growth(bytime_data, ax):
+    # Calculate new followers per month
+    new_followers_per_month = bytime_data.groupby(pd.Grouper(key='Date', freq='M')).agg({'follows': 'sum'})
+
+    # Plotting the new followers per month
+    ax.bar(new_followers_per_month.index, new_followers_per_month['follows'], color='tab:purple', width=20.0)  # Increase width here
+    ax.set_xlabel('Month', fontsize=14)
+    ax.set_ylabel('New Followers', fontsize=14)
+    ax.set_title('New Followers Per Month', fontsize=16)
+    ax.grid(True)
+
+def plot_engagements_over_time(combined_data, ax):
+    # Calculate total engagements over time
+    monthly_engagements = combined_data.resample('M').agg({'engagements': 'sum'})
+
+    # Plotting engagements over time
+    ax.bar(monthly_engagements.index, monthly_engagements['engagements'], color='tab:orange', width=20.0)  # Increase width here
+    ax.set_xlabel('Month', fontsize=14)
+    ax.set_ylabel('Total Engagements', fontsize=14)
+    ax.set_title('Engagements Over Time', fontsize=16)
+    ax.grid(True)
+
+def plot_impressions_over_time(combined_data, ax):
+    # Calculate total impressions over time
+    monthly_impressions = combined_data.resample('M').agg({'impressions': 'sum'})
+
+    # Plotting impressions over time
+    ax.bar(monthly_impressions.index, monthly_impressions['impressions'], color='tab:blue', width=20.0)  # Increase width here
+    ax.set_xlabel('Month', fontsize=14)
+    ax.set_ylabel('Total Impressions', fontsize=14)
+    ax.set_title('Impressions Over Time', fontsize=16)
+    ax.grid(True)
 main()
