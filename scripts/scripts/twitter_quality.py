@@ -48,40 +48,7 @@ def prepare_data(combined_data, bytime_data):
     combined_monthly_data['followers_per_tweet'] = combined_monthly_data['follows'] / combined_monthly_data['tweets_count']
     return monthly_tweet_count, monthly_data, combined_monthly_data
 
-def plot_tweets_per_month(monthly_tweet_count, ax):
-    # Calculate the average for the latest 3 months
-    avg_tweets_3_months = monthly_tweet_count[-3:].mean()
 
-    # Calculate the average for the previous 3 months
-    prev_avg_tweets_3_months = monthly_tweet_count[-6:-3].mean()
-
-    # Calculate percentage difference
-    diff_percent = ((avg_tweets_3_months - prev_avg_tweets_3_months) / prev_avg_tweets_3_months) * 100
-
-    # Choose color based on difference
-    color = 'green' if diff_percent >= 0 else 'red'
-
-    # Plot previous 3-month average
-    ax.axhline(y=prev_avg_tweets_3_months, color='gray', linestyle=':', linewidth=2)
-    ax.text(monthly_tweet_count.index[-6], prev_avg_tweets_3_months, f' Prev Avg: {prev_avg_tweets_3_months:.2f}', verticalalignment='bottom', fontsize=12)
-
-    # Plot current 3-month average
-    ax.axhline(y=avg_tweets_3_months, color='gray', linestyle='--', linewidth=2)
-    ax.text(monthly_tweet_count.index[-3], avg_tweets_3_months, f' Current Avg: {avg_tweets_3_months:.2f}', verticalalignment='bottom', fontsize=12)
-
-    # Plot percentage difference
-    ax.text(monthly_tweet_count.index[-1], avg_tweets_3_months, f' Diff: {diff_percent:.2f}%', verticalalignment='top', color=color, fontsize=12)
-
-    # Plot the bar chart
-    ax.bar(monthly_tweet_count.index, monthly_tweet_count, color='tab:blue', width=20.0)  # Increase width here
-
-    # Set labels and title
-    ax.set_xlabel('Month', fontsize=14)
-    ax.set_ylabel('Number of Tweets', fontsize=14)
-    ax.set_title('Number of Tweets per Month', fontsize=16)
-    ax.grid(True)
-    plt.xticks(rotation=45, fontsize=12)
-    plt.yticks(fontsize=12)
 
 def plot_engagement_rate(engagement_rate, ax):
     # Calculate the average for the latest 3 months
@@ -118,6 +85,7 @@ def plot_engagement_rate(engagement_rate, ax):
     plt.xticks(rotation=45, fontsize=12)
     plt.yticks(fontsize=12)
 
+
 def plot_horizontal_line_with_growth(data, ax, field, color, title, ylabel):
     # Calculate the average for the latest 3 months
     avg_last_3_months = data[field][-3:].mean()
@@ -132,26 +100,33 @@ def plot_horizontal_line_with_growth(data, ax, field, color, title, ylabel):
     growth_color = 'green' if diff_percent >= 0 else 'red'
 
     # Plot previous 3-month average
-    ax.axhline(y=avg_prev_3_months, color='gray', linestyle=':', linewidth=2)
-    ax.text(data.index[-6], avg_prev_3_months, f' Prev Avg: {avg_prev_3_months:.2f}', verticalalignment='bottom', fontsize=12)
+    ax.axhline(y=avg_prev_3_months, color='darkgray', linestyle=':', linewidth=3)
+    ax.text(data.index[-6], avg_prev_3_months, f' Prev Avg: {avg_prev_3_months:.2f}', verticalalignment='bottom', fontsize=14, fontweight='bold')
 
     # Plot current 3-month average
-    ax.axhline(y=avg_last_3_months, color='gray', linestyle='--', linewidth=2)
-    ax.text(data.index[-3], avg_last_3_months, f' Current Avg: {avg_last_3_months:.2f}', verticalalignment='bottom', fontsize=12)
+    ax.axhline(y=avg_last_3_months, color='darkgray', linestyle='-', linewidth=3)
+    ax.text(data.index[-3], avg_last_3_months, f' Current Avg: {avg_last_3_months:.2f}', verticalalignment='bottom', fontsize=14, fontweight='bold')
 
     # Plot percentage difference
-    ax.text(data.index[-1], avg_last_3_months, f' Diff: {diff_percent:.2f}%', verticalalignment='top', color=growth_color, fontsize=12)
+    ax.text(data.index[-1], avg_last_3_months, f' Diff: {diff_percent:.2f}%', verticalalignment='top', color=growth_color, fontsize=14, fontweight='bold')
 
     # Plot the bar chart
     ax.bar(data.index, data[field], color=color, width=20.0)
 
     # Set labels and title
-    ax.set_xlabel('Month', fontsize=14)
-    ax.set_ylabel(ylabel, fontsize=14)
-    ax.set_title(title, fontsize=16)
+    ax.set_xlabel('Month', fontsize=15)
+    ax.set_ylabel(ylabel, fontsize=15)
+    ax.set_title(title, fontsize=18, fontweight='bold')
     ax.grid(True)
-    plt.xticks(rotation=45, fontsize=12)
-    plt.yticks(fontsize=12)
+    plt.xticks(rotation=45, fontsize=14)
+    plt.yticks(fontsize=14)
+
+
+
+def plot_tweets_per_month(monthly_tweet_count, ax):
+    # Convert the Series to a DataFrame and assign a column name
+    monthly_tweet_count_df = monthly_tweet_count.to_frame('tweet_count')
+    plot_horizontal_line_with_growth(monthly_tweet_count_df, ax, 'tweet_count', 'tab:blue', 'Number of Tweets per Month', 'Number of Tweets')
 
 def plot_followers_per_tweet(combined_monthly_data, ax):
     plot_horizontal_line_with_growth(combined_monthly_data, ax, 'followers_per_tweet', 'tab:green', 'Followers per Tweet per Month', 'Followers per Tweet')
