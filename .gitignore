@@ -4,3 +4,4 @@ node/node_modules
 node/.terminalizer/token.txt
 Brewfile.lock.json
 .vscode
+__pycache__

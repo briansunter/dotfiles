@@ -14,7 +14,9 @@ alias vim='nvim'
 alias ec='emacsclient -c'
 alias simple-serve='python -m http.server 8000'
 alias dot="$HOME/.dotfiles/manage.sh bootstrap"
-
+alias getip="ipconfig getifaddr en1 || ipconfig getifaddr en0"
+alias mergemd="find . -name '*.md' ! -name 'out.md' -exec cat {} + > out.md"
+export PATH="$HOME/.dotfiles/scripts/scripts:$PATH"
 # gpg
 export GPG_TTY=$(tty)
 gpgconf --launch gpg-agent

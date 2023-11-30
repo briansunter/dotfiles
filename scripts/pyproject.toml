@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "scripts"
+version = "0.1.0"
+description = ""
+authors = ["Brian Sunter <2816289+briansunter@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.13"
+pandas = "^2.1.3"
+matplotlib = "^3.8.2"
+
+[tool.poetry.scripts]
+combine-csvs = "scripts.mergecsv:main"
+combine-twitter = "scripts.merge_twitter_csv:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

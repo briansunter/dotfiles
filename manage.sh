@@ -41,13 +41,20 @@ bootstrap() {
   nvm install
   npm install
   popd
-  popd
 
-  echo "Set up Git Secrets"
+  echo "Set up Git Secrets $(pwd)"
   git secrets --register-aws --global
   git secrets --add-provider -- cat git/git-secrets-patterns.txt
-  git secrets --install ~/.git-templates/git-secrets
+  git secrets --install -f ~/.git-templates/git-secrets
   git config --global init.templateDir ~/.git-templates/git-secrets
+
+
+  echo "scripts"
+  pushd scripts
+  echo "installing"
+  poetry install
+  echo "Installed"
+  popd
 }
 
 if declare -f "$1" > /dev/null
